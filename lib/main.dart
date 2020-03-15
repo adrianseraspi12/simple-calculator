@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'common/circular_button.dart';
 
 void main() => runApp(MaterialApp(
   home: Home()
@@ -45,30 +46,27 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                 children: <Widget> [
-                  Container(
-                    child: FlatButton(
-                      onPressed: () {},
-                      padding: EdgeInsets.all(16.0),
-                      color: Colors.grey[200],
-                      child: Text(
-                        'C',
-                        style: TextStyle(fontSize: 24.0),
-                        ),
+                  FlatButton(
+                    onPressed: () {},
+                    padding: EdgeInsets.all(24.0),
+                    color: Colors.grey[200],
+                    shape: CircleBorder(),
+                    child: Text(
+                      'C',
+                      style: TextStyle(fontSize: 24.0),
                       ),
-                  ),
+                    ),
 
-                  Container(
-                    child: FlatButton(
-                      onPressed: () {},
-                      padding: EdgeInsets.all(16.0),
-                      textColor: Colors.white,
-                      color: Colors.amberAccent[700],
-                      child: Text(
-                        '÷',
-                        style: TextStyle(fontSize: 24.0),),
-                      ),
-
-                  )
+                  FlatButton(
+                    onPressed: () {},
+                    padding: EdgeInsets.all(24.0),
+                    textColor: Colors.white,
+                    color: Colors.amberAccent[700],
+                    shape: CircleBorder(),
+                    child: Text(
+                      '÷',
+                      style: TextStyle(fontSize: 24.0),),
+                    )
                 ]
 
               ),
@@ -84,9 +82,10 @@ class Home extends StatelessWidget {
                 children: <Widget> [
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '7',
                       style: TextStyle(fontSize: 24.0),),
@@ -94,9 +93,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '8',
                       style: TextStyle(fontSize: 24.0),),
@@ -104,9 +104,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '9',
                       style: TextStyle(fontSize: 24.0),),
@@ -114,9 +115,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.amberAccent[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '×',
                       style: TextStyle(fontSize: 24.0),),
@@ -136,9 +138,10 @@ class Home extends StatelessWidget {
                 children: <Widget> [
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '4',
                       style: TextStyle(fontSize: 24.0),),
@@ -146,9 +149,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '5',
                       style: TextStyle(fontSize: 24.0),),
@@ -156,9 +160,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '6',
                       style: TextStyle(fontSize: 24.0),),
@@ -166,9 +171,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.amberAccent[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '-',
                       style: TextStyle(fontSize: 24.0),),
@@ -188,9 +194,10 @@ class Home extends StatelessWidget {
                 children: <Widget> [
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '1',
                       style: TextStyle(fontSize: 24.0),),
@@ -198,9 +205,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '2',
                       style: TextStyle(fontSize: 24.0),),
@@ -208,9 +216,10 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '3',
                       style: TextStyle(fontSize: 24.0),),
@@ -218,13 +227,15 @@ class Home extends StatelessWidget {
 
                   FlatButton(
                     onPressed: () {},
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.amberAccent[700],
+                    shape: CircleBorder(),
                     child: Text(
                       '+',
                       style: TextStyle(fontSize: 24.0),),
                   ),
+                  
                 ]
 
               ),
@@ -243,9 +254,10 @@ class Home extends StatelessWidget {
                       margin: EdgeInsets.only(right: 4.0),
                                           child: FlatButton(
                         onPressed: () {},
-                        padding: EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(24.0),
                         textColor: Colors.white,
                         color: Colors.grey[700],
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
@@ -261,9 +273,10 @@ class Home extends StatelessWidget {
                       margin: EdgeInsets.only(left: 4.0),
                         child: FlatButton(
                         onPressed: () {},
-                        padding: EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(24.0),
                         textColor: Colors.white,
                         color: Colors.amberAccent[700],
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Text(
