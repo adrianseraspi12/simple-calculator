@@ -19,7 +19,8 @@ class Home extends StatelessWidget {
             Row(
               children: <Widget>[
                 Expanded(
-                    child: Container(
+                  child: Container(
+                    alignment: Alignment.centerRight,
                     margin: EdgeInsets.all(16.0),
                     padding: EdgeInsets.all(16.0),
                     color: Colors.white,
@@ -27,7 +28,7 @@ class Home extends StatelessWidget {
                       '0',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 24.0,
+                        fontSize: 60.0,
                       ),
                       ),
                   ),
@@ -49,7 +50,10 @@ class Home extends StatelessWidget {
                       onPressed: () {},
                       padding: EdgeInsets.all(16.0),
                       color: Colors.grey[200],
-                      child: Text('C'),
+                      child: Text(
+                        'C',
+                        style: TextStyle(fontSize: 24.0),
+                        ),
                       ),
                   ),
 
@@ -57,8 +61,11 @@ class Home extends StatelessWidget {
                     child: FlatButton(
                       onPressed: () {},
                       padding: EdgeInsets.all(16.0),
-                      color: Colors.grey[200],
-                      child: Text('÷'),
+                      textColor: Colors.white,
+                      color: Colors.amberAccent[700],
+                      child: Text(
+                        '÷',
+                        style: TextStyle(fontSize: 24.0),),
                       ),
 
                   )
@@ -78,29 +85,41 @@ class Home extends StatelessWidget {
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('7'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '7',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('8'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '8',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('9'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '9',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('×'),
+                    textColor: Colors.white,
+                    color: Colors.amberAccent[700],
+                    child: Text(
+                      '×',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
                 ]
 
@@ -118,29 +137,41 @@ class Home extends StatelessWidget {
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('4'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '4',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('5'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '5',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('6'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '6',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('-'),
+                    textColor: Colors.white,
+                    color: Colors.amberAccent[700],
+                    child: Text(
+                      '-',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
                 ]
 
@@ -158,29 +189,41 @@ class Home extends StatelessWidget {
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('1'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '1',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('2'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '2',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('3'),
+                    textColor: Colors.white,
+                    color: Colors.grey[700],
+                    child: Text(
+                      '3',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
 
                   FlatButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
-                    color: Colors.grey[900],
-                    child: Text('+'),
+                    textColor: Colors.white,
+                    color: Colors.amberAccent[700],
+                    child: Text(
+                      '+',
+                      style: TextStyle(fontSize: 24.0),),
                   ),
                 ]
 
@@ -201,8 +244,14 @@ class Home extends StatelessWidget {
                                           child: FlatButton(
                         onPressed: () {},
                         padding: EdgeInsets.all(16.0),
-                        color: Colors.grey[200],
-                        child: Text('0'),
+                        textColor: Colors.white,
+                        color: Colors.grey[700],
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '0',
+                            style: TextStyle(fontSize: 24.0),),
+                        ),
                         ),
                     ),
                   ),
@@ -213,8 +262,15 @@ class Home extends StatelessWidget {
                         child: FlatButton(
                         onPressed: () {},
                         padding: EdgeInsets.all(16.0),
-                        color: Colors.grey[200],
-                        child: Text('='),
+                        textColor: Colors.white,
+                        color: Colors.amberAccent[700],
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            '=',
+                            textAlign: TextAlign.end,
+                            style: TextStyle(fontSize: 24.0),),
+                        ),
                         ),
                     ),
                   ),
