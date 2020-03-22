@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:simple_calculator/model/calculator.dart';
 
 void main() => runApp(MaterialApp(
   home: Home()
 ));
 
 class Home extends StatelessWidget {
+
+  var textfieldController = TextEditingController();
+
+  void setNumber(String num) {
+    var currentNumber = textfieldController.text;
+
+    if (currentNumber.isEmpty && num == "0") {
+      return;
+    }
+
+    textfieldController.text += num;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,17 +34,27 @@ class Home extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: Container(
-                    alignment: Alignment.centerRight,
                     margin: EdgeInsets.all(16.0),
                     padding: EdgeInsets.all(16.0),
                     color: Colors.white,
-                    child: Text(
-                      '0',
+
+                    child: TextField(
+                      controller: textfieldController,
+                      enabled: false,
+                      textAlign: TextAlign.right,
+
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "0",
+                        hintStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 60.0,),
+                      ),
+                      
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 60.0,
-                      ),
-                      ),
+                        fontSize: 60.0,),
+                    ),
                   ),
 
                 ),
@@ -46,7 +70,9 @@ class Home extends StatelessWidget {
 
                 children: <Widget> [
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      textfieldController.text = "";
+                    },
                     padding: EdgeInsets.all(24.0),
                     color: Colors.grey[200],
                     shape: CircleBorder(),
@@ -80,7 +106,9 @@ class Home extends StatelessWidget {
 
                 children: <Widget> [
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('7');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -91,7 +119,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('8');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -102,7 +132,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('9');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -113,7 +145,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {   
+
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.amberAccent[700],
@@ -136,7 +170,9 @@ class Home extends StatelessWidget {
 
                 children: <Widget> [
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('4');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -147,7 +183,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('5');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -158,7 +196,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('6');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -192,7 +232,9 @@ class Home extends StatelessWidget {
 
                 children: <Widget> [
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('1');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -203,7 +245,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('2');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -214,7 +258,9 @@ class Home extends StatelessWidget {
                   ),
 
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setNumber('3');
+                    },
                     padding: EdgeInsets.all(24.0),
                     textColor: Colors.white,
                     color: Colors.grey[700],
@@ -251,8 +297,10 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: Container(
                       margin: EdgeInsets.only(right: 4.0),
-                                          child: FlatButton(
-                        onPressed: () {},
+                      child: FlatButton(
+                        onPressed: () {
+                          setNumber('0');
+                        },
                         padding: EdgeInsets.all(24.0),
                         textColor: Colors.white,
                         color: Colors.grey[700],

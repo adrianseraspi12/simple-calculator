@@ -15,7 +15,6 @@ class CalculatorBloc extends Bloc<Calculator, int> {
   @override
   Stream<int> mapEventToState(Calculator event) {
     // TODO: implement mapEventToState
-    
     int result = 0;
 
     switch(event.operation) {
