@@ -13,7 +13,7 @@ class CalculatorBloc extends Bloc<Calculator, int> {
   int get initialState => 0;
 
   @override
-  Stream<int> mapEventToState(Calculator event) {
+  Stream<int> mapEventToState(Calculator event) async* {
     // TODO: implement mapEventToState
     int result = 0;
 
@@ -48,8 +48,7 @@ class CalculatorBloc extends Bloc<Calculator, int> {
         break;
 
     }
-
-    return null;
+    
   }  
 
 }
