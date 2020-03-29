@@ -9,4 +9,4 @@ A simple calculator app made from Flutter with BLOC pattern
 ## Specs/Libraries
 
 1. [**BLOC**](https://github.com/felangel/bloc/tree/master/packages/bloc)
-2. [**Flutter Block**](https://developer.android.com/topic/libraries/architecture/room)
+2. [**Flutter Bloc**](https://github.com/felangel/bloc/tree/master/packages/flutter_bloc)
