@@ -6,15 +6,15 @@ import 'ui/view/home.dart';
 
 
 void main() => runApp(MaterialApp(
-  home: Test()
+  home: Root()
 ));
 
-class Test extends StatefulWidget {
+class Root extends StatefulWidget {
   @override
-  _TestState createState() => _TestState();
+  _RootState createState() => _RootState();
 }
 
-class _TestState extends State<Test> {
+class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

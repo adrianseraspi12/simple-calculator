@@ -96,7 +96,9 @@ class _HomeState extends State<Home> {
 
                 FlatButton(
                   onPressed: () {
+                    calculator.firstNumber = int.parse(textfieldController.text);
                     calculator.operation = Operation.divide;
+                    textfieldController.text = '÷';
                   },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
@@ -160,7 +162,9 @@ class _HomeState extends State<Home> {
 
                 FlatButton(
                   onPressed: () {   
+                    calculator.firstNumber = int.parse(textfieldController.text);
                     calculator.operation = Operation.multiply;
+                    textfieldController.text = '×';
                   },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
@@ -224,7 +228,9 @@ class _HomeState extends State<Home> {
 
                 FlatButton(
                   onPressed: () {
+                    calculator.firstNumber = int.parse(textfieldController.text);
                     calculator.operation = Operation.subtract;
+                    textfieldController.text = '-';
                   },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
