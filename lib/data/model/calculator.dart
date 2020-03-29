@@ -1,5 +1,5 @@
 
-import 'package:simple_calculator/enum/operation.dart';
+import 'package:simple_calculator/data/enum/operation.dart';
 
 class Calculator {
   

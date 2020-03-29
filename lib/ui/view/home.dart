@@ -1,23 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_calculator/data/enum/operation.dart';
+import 'package:simple_calculator/data/model/calculator.dart';
+import 'package:simple_calculator/ui/bloc/calculator_bloc.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
 
-  final textfieldController = TextEditingController();
-
-  void setNumber(String num) {
-    var currentNumber = textfieldController.text;
-
-    if (currentNumber.isEmpty && num == "0") {
-      return;
-    }
-    else if (currentNumber.length == 5) {
-      return;
-    }
-
-    textfieldController.text += num;
-  }
+class _HomeState extends State<Home> {
+  final textfieldController = TextEditingController(text: '0');
+  final CalculatorBloc calculatorBloc = CalculatorBloc();
+  Calculator calculator = Calculator(null, 0, 0);
 
   @override
   Widget build(BuildContext context) {
@@ -29,30 +25,48 @@ class Home extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(16.0),
-                  padding: EdgeInsets.all(16.0),
-                  color: Colors.white,
+                child: BlocBuilder<CalculatorBloc, CalculatorState>(
+                  bloc: calculatorBloc,
+                  builder: (context, state) {
+                    
+                  if (state is CalculatorInitial) {
+                    textfieldController.text = "${state.result}";
+                  }
+                  else if (state is CalculatorResult) {
+                    textfieldController.text = "${state.result}";
+                  }
 
-                  child: TextField(
-                    controller: textfieldController,
-                    enabled: false,
-                    textAlign: TextAlign.right,
+                  return Container(
+                    margin: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
+                    color: Colors.white,
 
-                    decoration: InputDecoration(
+                    child: TextField(
+                      controller: textfieldController,
+                      enabled: false,
+                      textAlign: TextAlign.right,
+                      onChanged: (string) {
+                        setState(() {
+                    if (state is CalculatorInitial) {
+                      textfieldController.text = "${state.result}";
+                    }
+                    else if (state is CalculatorResult) {
+                      textfieldController.text = "${state.result}";
+                    }
+                  });
+                      },
+                      
+                      decoration: InputDecoration(
                       border: InputBorder.none,
                       counterText: "",
-                      hintText: "0",
-                    
-                      hintStyle: TextStyle(
-                      color: Colors.black,
-                      fontSize: 60.0,),
+                      ),
+                      
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 60.0,),
                     ),
-                    
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 60.0,),
-                  ),
+                  );
+                }
                 ),
 
               ),
@@ -69,7 +83,7 @@ class Home extends StatelessWidget {
               children: <Widget> [
                 FlatButton(
                   onPressed: () {
-                    textfieldController.text = "";
+                    textfieldController.text = "0";
                   },
                   padding: EdgeInsets.all(24.0),
                   color: Colors.grey[200],
@@ -81,7 +95,9 @@ class Home extends StatelessWidget {
                   ),
 
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculator.operation = Operation.divide;
+                  },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
                   color: Colors.amberAccent[700],
@@ -144,7 +160,7 @@ class Home extends StatelessWidget {
 
                 FlatButton(
                   onPressed: () {   
-
+                    calculator.operation = Operation.multiply;
                   },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
@@ -207,7 +223,9 @@ class Home extends StatelessWidget {
                 ),
 
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculator.operation = Operation.subtract;
+                  },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
                   color: Colors.amberAccent[700],
@@ -269,7 +287,12 @@ class Home extends StatelessWidget {
                 ),
 
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                      // change background color
+                      calculator.firstNumber = int.parse(textfieldController.text);
+                      calculator.operation = Operation.add;
+                      textfieldController.text = '+';
+                  },
                   padding: EdgeInsets.all(24.0),
                   textColor: Colors.white,
                   color: Colors.amberAccent[700],
@@ -317,7 +340,9 @@ class Home extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.only(left: 4.0),
                       child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        calculate();
+                      },
                       padding: EdgeInsets.all(24.0),
                       textColor: Colors.white,
                       color: Colors.amberAccent[700],
@@ -331,7 +356,7 @@ class Home extends StatelessWidget {
                       ),
                       ),
                   ),
-                ),
+                )
 
               ]
 
@@ -342,4 +367,41 @@ class Home extends StatelessWidget {
         
         );
   }
+
+    void setNumber(String num) {
+
+    if (textfieldController.text.length == 5) {
+      return;
+    }
+
+    var number = int.parse(num);
+    var currentNumber = int.tryParse(textfieldController.text);
+
+    //  If its operation
+    if (currentNumber == null || currentNumber == 0) {
+      textfieldController.text = num;
+      return;
+    }
+    else if (currentNumber == 0 && number == 0) {
+      return;
+    }
+
+    textfieldController.text += num;
+  }
+
+  void calculate() {
+    int secondNumber = int.tryParse(textfieldController.text);
+
+    if (calculator.firstNumber == 0 || secondNumber == null) {
+      return;
+    }
+    else {
+      calculator.secondNumber = secondNumber;
+    }
+
+    print("CALCULATOR = ${calculator.firstNumber} || ${calculator.operation} || ${calculator.secondNumber}");
+
+    calculatorBloc.add(calculator);      
+  }
+
 }
