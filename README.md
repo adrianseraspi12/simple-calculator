@@ -6,6 +6,8 @@ A simple calculator app made from Flutter with BLOC pattern
 
 1. Add, Subtract, Multiply and Divide a number
 
+![](art/calculator.gif)
+
 ## Specs/Libraries
 
 1. [**BLOC**](https://github.com/felangel/bloc/tree/master/packages/bloc)
